@@ -1,0 +1,7 @@
+[package]
+name = "project"
+version = "0.1.0"
+authors = ["Arjan van Eersel <arjan@rustbg.org>"]
+edition = "2018"
+
+[dependencies]
