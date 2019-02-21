@@ -3,10 +3,10 @@
 We're going to build a webserver which will show a random compliment every time it's invoked.
 
 ## Dependencies (check crates.io)
-* (handlebars)[https://www.crates.io/crates/handlebars]
-* (motivations)[https://www.crates.io/crates/motivations]
-* (pick-one)[https://www.crates.io/crates/pick-one]
-* (simple-server)[https://www.crates.io/crates/simple-server]
+* [(handlebars](https://www.crates.io/crates/handlebars)
+* [motivations](https://www.crates.io/crates/motivations)
+* [pick-one](https://www.crates.io/crates/pick-one)
+* [simple-server](https://www.crates.io/crates/simple-server)
 
 ## Instructions
 
