@@ -14,9 +14,9 @@ We're going to build a webserver which will show a random compliment every time 
 
 * Create a function get_server_port which returns a String
 * Use env::var to return the value of PORT from the environment or return a default value of 7878
-* Use Server::new() to define a variable app. This will require you to make a clojure taking a request and response as an argument.
-* In the clojure define a variable with some basic HTML which we'll feed to the server in a moment. The server expects body content to be in bytes. The String object conviniently has an into_bytes() method to help us out.
-* Make the clojure return a positive Result (Ok) with a response.header (Content-Type text/html; charset=utf-8) and a body containing the HTML. The latter is a bit tougher. Scroll down for the answer if you're stuck.
+* Use Server::new() to define a variable app. This will require you to make a closure taking a request and response as an argument.
+* In the closure define a variable with some basic HTML which we'll feed to the server in a moment. The server expects body content to be in bytes. The String object conviniently has an into_bytes() method to help us out.
+* Make the closure return a positive Result (Ok) with a response.header (Content-Type text/html; charset=utf-8) and a body containing the HTML. The latter is a bit tougher. Scroll down for the answer if you're stuck.
 * Define a string slice variable with the value "0.0.0.0"
 * Define a variable port with the result of invoking `get_server_port()` as the value
 * Print a message showing the address (host and port) the server is running on
@@ -55,7 +55,7 @@ We're going to build a webserver which will show a random compliment every time 
 
 
 
-Server::new with clojure
+Server::new with closure
 ```
 let app = Server::new(|_request, mut response| {
     let html = String::from("<html><head><title>Rustbridge</title></head><body><h1>Hello Rust!</h1></body></html>").into_bytes();

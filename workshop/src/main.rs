@@ -1,4 +1,4 @@
-use std::fmt;
+#![allow(dead_code)]
 
 fn println_example() {
     println!("Hello, world!");
@@ -34,7 +34,7 @@ fn if_example() {
 fn match_example() {
     let height = 167u32;
     match height {
-        0...150 => println!("You're too small to go on the rollercoaster."),
+        0..=150 => println!("You're too small to go on the rollercoaster."),
         150...200 => println!("You may go on the rollercoaster!"),
         _ => {
             println!("You're too tall to go on the rollercoaster.");
@@ -44,8 +44,17 @@ fn match_example() {
 
 fn array_example() {
     let mut color = [255, 0, 255];
+    // let mut color [i32; 3] = [255, 0, 255]; // Another way that we could have defined this
     color[0] = 100;
     println!("The color is {:?}", color);
+}
+
+fn vectors_example() {
+    let mut prices = vec![30, 100, 2];
+    //let mut prices:Vec<i32> = vec![30, 100, 2]; // Another way that we could have defined this
+    prices[0] = 25;
+    prices.push(40);
+    println!("All the prices are: {:?}", prices);
 }
 
 #[derive(Debug)]
@@ -79,13 +88,6 @@ fn formatting_example() {
     println!("p: {:#?}", p);
 }
 
-fn vectors_example() {
-    let mut prices = vec![30, 100, 2];
-    prices[0] = 25;
-    prices.push(40);
-    println!("All the prices are: {:?}", prices);
-}
-
 fn for_loop_example() {
     // exclusive range
     for i in 0..10 {
@@ -97,6 +99,8 @@ fn for_loop_example() {
         println!("Number {}", i);
     }
 
+    // Looping over vectors is done via an iterator. 
+    // A good article about iterators is: https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html
     let names = vec!["Carol", "Jake", "Marylou", "Bruce"];
     for name in names.iter() {
         println!("Hi {}!", name);
@@ -223,52 +227,52 @@ fn slice_example() {
 }
 
 fn main() {
-    println_example();
+    // println_example();
 
-    variables_example();
+    // variables_example();
     
-    mutability_example();
+    // mutability_example();
     
-    println!("100 + 50 = {}", add_fifty(100));
+    // println!("100 + 50 = {}", add_fifty(100));
 
-    if_example();
+    // if_example();
 
-    match_example();
+    // match_example();
 
-    array_example();
+    // array_example();
 
-    formatting_example();
+    // vectors_example();
 
-    vectors_example();
+    // formatting_example();
 
-    for_loop_example();
+    // for_loop_example();
 
-    while_loop_example();
+    // while_loop_example();
 
-    loop_example();
+    // loop_example();
 
-    filter_example();
+    // filter_example();
 
-    map_example();
+    // map_example();
 
-    sum_example();
+    // sum_example();
 
-    enum_example();
+    // enum_example();
 
-    enum_with_value_example();
+    // enum_with_value_example();
 
-    option_example();
+    // option_example();
 
-    use_option_example();
+    // use_option_example();
 
-    result_example();
+    // result_example();
 
-    match add_five_to_string("10".to_string()) {
-        Ok(res) => println!("Results: {}", res),
-        Err(e) => println!("Error: {:?}", e),
-    };
+    // match add_five_to_string("10".to_string()) {
+    //     Ok(res) => println!("Results: {}", res),
+    //     Err(e) => println!("Error: {:?}", e),
+    // };
 
-    slice_example();
+    // slice_example();
 }
 
 #[cfg(test)]
