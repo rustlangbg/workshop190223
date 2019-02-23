@@ -44,7 +44,7 @@ fn match_example() {
 
 fn array_example() {
     let mut color = [255, 0, 255];
-    // let mut color [i32; 3] = [255, 0, 255]; // Another way that we could have defined this
+    //let mut color [i32; 3] = [255, 0, 255]; // Another way that we could have defined this
     color[0] = 100;
     println!("The color is {:?}", color);
 }
@@ -284,7 +284,7 @@ mod tests {
         let light = TrafficLight::Yellow;
 
         assert!(light == TrafficLight::Yellow);
-        assert_eq!(light, TrafficLight::Yellow);
+        assert_eq!(light, TrafficLight::Green);
         assert_ne!(light, TrafficLight::Red);
     }
 
